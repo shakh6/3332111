@@ -1,0 +1,374 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #87395e;
+  background: linear-gradient(135deg, #fff1f6, #f9dce9, #f0e3ff);
+  font-family: 'Playfair Display', serif;
+}
+
+.site {
+  max-width: 1000px;
+  padding: 25px 18px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.slide {
+  display: none;
+  min-height: 85vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 25px 5px;
+  animation: appear .8s ease;
+}
+
+.slide.active {
+  display: flex;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1, h2, h3 {
+  font-family: 'Marck Script', cursive;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(42px, 8vw, 72px);
+  color: #b83f7b;
+  margin: 15px 0;
+}
+
+h2 {
+  font-size: clamp(35px, 6vw, 53px);
+  color: #bd4d82;
+}
+
+p {
+  line-height: 1.9;
+}
+
+.decor {
+  font-size: clamp(25px, 5vw, 40px);
+  margin: 15px 0;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  50% { transform: translateY(-8px); }
+}
+
+/* KONVERT */
+
+.envelope {
+  position: relative;
+  width: 220px;
+  height: 155px;
+  margin: 40px auto 25px;
+  cursor: pointer;
+  filter: drop-shadow(0 12px 14px #bd648844);
+}
+
+.paper {
+  position: absolute;
+  inset: 8px 15px 10px;
+  background: #fffaf3;
+  border: 1px solid #e9c8d5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Marck Script', cursive;
+  font-size: 25px;
+}
+
+.flap {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: #f2b8d0;
+  clip-path: polygon(0 0, 100% 0, 50% 63%);
+  transform-origin: top;
+  transition: transform .6s;
+}
+
+.front {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: #e9a1be;
+  clip-path: polygon(0 0, 50% 62%, 100% 0, 100% 100%, 0 100%);
+}
+
+.seal {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 30px;
+}
+
+button {
+  border: 0;
+  border-radius: 40px;
+  padding: 14px 28px;
+  margin: 22px 0;
+  background: linear-gradient(135deg, #e78bb1, #bf4f87);
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px #bf4f8733;
+  transition: .25s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px #bf4f8755;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* XAT */
+
+.frame {
+  width: min(100%, 760px);
+  padding: clamp(25px, 6vw, 50px);
+  background: #fffaf8e8;
+  border: 2px solid #e8b4ca;
+  outline: 1px solid #e8b4ca88;
+  outline-offset: 6px;
+  border-radius: 6px;
+  margin: 15px auto;
+  box-shadow: 0 12px 35px #a84b741c;
+}
+
+#letterText {
+  font-size: clamp(17px, 2.5vw, 21px);
+  line-height: 2;
+  text-align: left;
+  white-space: pre-wrap;
+  min-height: 250px;
+}
+
+.flowers {
+  font-size: 25px;
+  margin: 15px;
+  color: #c66d95;
+}
+
+/* 3 YIL */
+
+.circle {
+  width: 190px;
+  height: 190px;
+  border: 2px solid #e9b5cb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #fff8fb;
+  box-shadow: 0 0 0 10px #f5d8e566;
+  animation: pulse 2s infinite;
+  margin: 20px 0 35px;
+}
+
+.circle span {
+  font-size: 85px;
+  color: #c44f84;
+}
+
+.circle small {
+  font-family: 'Marck Script', cursive;
+  font-size: 27px;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.04); }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  width: 100%;
+}
+
+.cards article {
+  background: #fff9fb;
+  border: 1px solid #edc6d7;
+  border-radius: 16px;
+  padding: 22px 15px;
+}
+
+.cards article div {
+  font-size: 38px;
+}
+
+.cards h3 {
+  font-size: 29px;
+}
+
+.cards p {
+  font-size: 15px;
+}
+
+.quote {
+  font-family: 'Marck Script', cursive;
+  font-size: clamp(25px, 4vw, 35px);
+}
+
+.age {
+  font-size: clamp(130px, 25vw, 190px);
+  font-weight: bold;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #e6b876, #d84d91, #a85ec4);
+  color: #c34d86;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulse 2s infinite;
+}
+
+.love {
+  font-family: 'Marck Script', cursive;
+  font-size: 30px;
+  color: #c44f84;
+}
+
+.signature {
+  font-family: 'Marck Script', cursive;
+  text-align: right;
+  font-size: 29px;
+}
+
+/* MUSIQA */
+
+.music {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: min(100%, 600px);
+  margin: 25px auto 15px;
+  padding: 15px;
+  background: #fff8fb;
+  border: 1px solid #e9bfd0;
+  border-radius: 16px;
+  text-align: left;
+}
+
+.music > span {
+  font-size: 35px;
+}
+
+.music div {
+  flex: 1;
+}
+
+.music strong {
+  font-size: 14px;
+}
+
+.music p {
+  margin: 5px 0;
+  font-size: 13px;
+}
+
+.music a {
+  text-decoration: none;
+  background: #bd4c82;
+  color: white;
+  border-radius: 30px;
+  padding: 12px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+iframe {
+  max-width: 600px;
+}
+
+footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Marck Script', cursive;
+  font-size: 22px;
+}
+
+/* ANIMATSIYALAR */
+
+#hearts, #falling {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  bottom: -50px;
+  animation: rise linear forwards;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-115vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.fall {
+  position: absolute;
+  top: -40px;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .cards {
+    grid-template-columns: 1fr;
+    max-width: 430px;
+  }
+
+  .frame {
+    padding: 30px 22px;
+  }
+
+  .music {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .music strong {
+    font-size: 12px;
+  }
+
+  .music a {
+    padding: 10px;
+  }
+}
